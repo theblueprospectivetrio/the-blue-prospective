@@ -869,3 +869,80 @@ a:not(.skip-link){background-image:none}
   .album-listen .spotify-embed{max-width:none}
   .album-lower .tracks{margin-top:5px}
 }
+
+/* Hero photo refinement — keep framing/type/artwork fixed, let the original photograph read clearly. */
+.hero-media img {
+  opacity: 1;
+  filter: saturate(.88) contrast(1.07) brightness(1.035);
+}
+.hero-media::after {
+  background: linear-gradient(to bottom,
+    rgba(30,65,110,.24) 0%,
+    rgba(30,65,110,.22) 28%,
+    rgba(30,65,110,.29) 43%,
+    rgba(30,65,110,.37) 59%,
+    rgba(30,65,110,.36) 77%,
+    rgba(18,43,77,.50) 100%);
+}
+@media (max-width: 760px) {
+  .hero-media::after {
+    background: linear-gradient(to bottom,
+      rgba(30,65,110,.28) 0%,
+      rgba(30,65,110,.20) 31%,
+      rgba(30,65,110,.32) 49%,
+      rgba(30,65,110,.37) 68%,
+      rgba(18,43,77,.52) 100%);
+  }
+}
+
+
+/* Album listening + verified credits — no static tracklist. */
+.album-lower.listening-credits{
+  display:grid !important;
+  grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr) !important;
+  gap:clamp(56px,7.2vw,108px) !important;
+  align-items:start !important;
+  margin-top:clamp(64px,7vw,96px) !important;
+}
+.listening-credits .album-listen{padding:0 !important;min-width:0}
+.listen-section-heading,.album-credit-panel>h3{
+  font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  line-height:1.5;color:#28466a;margin:0 0 18px;
+}
+.listen-section-intro{font-size:14px;line-height:1.7;font-weight:300;color:#718197;margin:0 0 20px}
+.spotify-embed-album{margin:0 !important;max-width:none !important;width:100%}
+.spotify-embed-album iframe{width:100%;height:420px;min-height:420px;border-radius:12px;display:block;border:0;background:#17375f}
+.credits-spotify-link{
+  margin-top:20px;display:inline-block;color:#28466a;
+  padding-bottom:6px;border-bottom:1px solid rgba(40,70,106,.34);
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  transition:color .2s,border-color .2s;
+}
+.credits-spotify-link:hover{color:#567ea8;border-bottom-color:#567ea8}
+.album-credit-panel{min-width:0;padding:0 0 0 2px}
+.album-credit-panel>h3{margin-bottom:22px}
+.credit-part{border-top:1px solid rgba(31,56,85,.20)}
+.credit-production{margin-top:30px}
+.credit-entry{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);
+  align-items:start;gap:14px;padding:13px 0 13px;
+  border-bottom:1px solid rgba(31,56,85,.13);
+  font-size:14px;line-height:1.45;
+}
+.credit-musicians .credit-entry span:first-child{font-weight:600;color:#294566}
+.credit-entry span:last-child{color:#6b7d92;text-align:right;font-weight:300}
+.credit-production .credit-entry span:first-child{font-size:12px;color:#6b7d92;line-height:1.55}
+.credit-production .credit-entry span:last-child{color:#294566;font-weight:500}
+.credit-recording{font-size:12px;line-height:1.8;color:#697c90;max-width:440px;margin:27px 0 22px}
+.credit-label{font-size:10px;letter-spacing:.19em;font-weight:700;color:#375a7f;margin:0}
+.credit-label span{padding:0 7px;color:#8b9fb5}
+@media(max-width:760px){
+  .album-lower.listening-credits{grid-template-columns:minmax(0,1fr) !important;gap:65px !important;margin-top:65px !important}
+  .listening-credits .album-listen{width:100%}
+  .spotify-embed-album iframe{height:420px;min-height:420px}
+  .album-credit-panel{padding:0}
+}
+@media(max-width:420px){
+  .album-lower.listening-credits{gap:52px !important}
+  .credit-entry{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;font-size:13px}
+}
