@@ -598,3 +598,274 @@ a:not(.skip-link){background-image:none}
     max-width:none;
   }
 }
+
+
+/* Version 17 — simpler wordmark, CTA without arrow, Fresu quote lifted and centered with no background. */
+.wordmark{gap:0 !important;}
+.wordmark-symbol{display:none !important;}
+
+.hero-cta{
+  margin-top:68px !important;
+}
+.hero-action{
+  color:#dce8f7 !important;
+  border-bottom:1px solid rgba(220,232,247,.82) !important;
+  letter-spacing:.18em !important;
+}
+.hero-action::after{
+  content:none !important;
+  display:none !important;
+}
+.hero-action:hover,
+.hero-action:focus-visible{
+  color:#ffffff !important;
+  border-bottom-color:#ffffff !important;
+}
+
+.album-lower{
+  margin-top:52px !important;
+  align-items:start !important;
+}
+.liner-quote,
+.liner-quote::before{
+  background:none !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+.liner-quote{
+  max-width:640px !important;
+  margin:-18px auto 0 !important;
+  padding:0 !important;
+  justify-self:center !important;
+  align-self:start !important;
+}
+.liner-quote::before{
+  content:none !important;
+}
+.liner-quote .quote-mark{
+  margin:0 0 10px !important;
+  text-align:left;
+}
+.liner-quote blockquote{
+  max-width:640px !important;
+  margin:0 0 24px !important;
+}
+.spotify-embed{
+  margin-top:42px !important;
+}
+
+@media (min-width: 761px){
+  .album-lower{
+    grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr) !important;
+    gap:clamp(40px,6vw,86px) !important;
+  }
+}
+
+@media (max-width: 760px){
+  .wordmark{gap:0 !important;}
+  .hero-cta{
+    margin-top:48px !important;
+  }
+  .liner-quote{
+    margin:0 auto !important;
+  }
+}
+
+
+/* ===========================================================
+   THE BLUE PROSPECTIVE · COVER ARTWORK SYSTEM / 2026-10-27
+   Linework is vector geometry based on the Prospettive cover:
+   white/dark-blue tapering bars and dashed perspective lines.
+   =========================================================== */
+.cover-definitions {position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.cover-motif {
+  position:absolute;
+  display:block;
+  pointer-events:none;
+  height:auto;
+  max-width:none;
+  z-index:0;
+  color:#1e416e;
+  opacity:.09;
+  overflow:visible;
+}
+.album-section::before,
+.videos-section::before,
+.about-section::before,
+.interlude-photo::before{display:none!important}
+.album-section > .page-wrap,
+.videos-section > .page-wrap,
+.about-section > .page-wrap,
+.contact-section > .page-wrap{
+  position:relative;
+  z-index:1;
+}
+.album-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--album {
+  width:min(880px,72vw);
+  right:-21%;
+  top:-115px;
+  transform:rotate(-7deg);
+  opacity:.13;
+}
+.cover-motif--album-lower {
+  width:min(1030px,85vw);
+  bottom:-280px;
+  left:-39%;
+  transform:rotate(178deg);
+  opacity:.072;
+}
+.videos-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--videos {
+  width:min(1130px,90vw);
+  right:-18%;
+  top:-260px;
+  color:#e5f2ff;
+  opacity:.15;
+  transform:rotate(9deg);
+}
+.cover-motif--videos-lower {
+  width:min(1070px,83vw);
+  left:-23%;
+  bottom:-280px;
+  color:#d7e9fb;
+  opacity:.11;
+  transform:rotate(182deg);
+}
+.about-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--about {
+  width:min(1080px,87vw);
+  right:-29%;
+  top:110px;
+  opacity:.10;
+  transform:rotate(170deg);
+}
+.cover-motif--about-lower {
+  width:min(760px,70vw);
+  left:-34%;
+  bottom:-280px;
+  opacity:.075;
+  transform:rotate(-9deg);
+}
+.interlude-photo{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--interlude {
+  width:90%;
+  left:-15%;
+  bottom:-57%;
+  color:#f0f4f8;
+  opacity:.20;
+  z-index:2;
+  transform:rotate(4deg);
+}
+.contact-section{position:relative;isolation:isolate;overflow:hidden}
+.contact-lines{display:none!important}
+.cover-motif--contact {
+  width:min(1100px,100vw);
+  right:-18%;
+  top:-36%;
+  color:#daeaf9;
+  opacity:.25;
+  transform:rotate(5deg);
+}
+.site-footer{position:relative;isolation:isolate;overflow:hidden}
+.site-footer:before{
+  content:"";
+  position:absolute;
+  inset:-80px -20% -65px 47%;
+  background:url("assets/perspective-motif.svg") center/cover no-repeat;
+  opacity:.11;
+  filter:brightness(0) invert(1);
+  pointer-events:none;
+}
+.site-footer > .page-wrap{position:relative;z-index:1}
+
+/* Existing photographic homepage kept as approved. The label remains a link,
+   but without the decorative arrow or a boxed call-to-action. */
+.wordmark{gap:0!important}
+.wordmark-symbol{display:none!important}
+.hero-action::after{display:none!important;content:none!important}
+.hero-cta{margin-top:60px!important}
+.hero-action{
+  color:#f5f9fe!important;
+  border-bottom:1px solid rgba(241,247,255,.88)!important;
+  padding:0 0 7px!important;
+  font-weight:600!important;
+  letter-spacing:.16em!important;
+  transition:color .2s,border-color .2s,opacity .2s;
+}
+.hero-action:hover,.hero-action:focus-visible{
+  color:white!important;
+  border-bottom-color:#fff!important;
+  opacity:1!important;
+}
+
+/* Paolo Fresu — prominent and truly centered, no tint, panels or frames. */
+.fresu-spotlight{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  margin:clamp(42px,5.7vw,76px) auto 0;
+  padding:0 24px;
+  text-align:center;
+  color:var(--ink);
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.fresu-spotlight .quote-mark{
+  display:block;
+  text-align:center;
+  font-size:clamp(66px,7vw,96px);
+  line-height:.8;
+  font-weight:300;
+  color:#8297ae;
+  margin:0 0 23px;
+}
+.fresu-spotlight blockquote{
+  max-width:none;
+  margin:0 auto 25px;
+  font-size:clamp(29px,3.25vw,43px);
+  line-height:1.36;
+  font-weight:300;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.fresu-spotlight .quote-author{
+  margin:0;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.16em;
+}
+.fresu-spotlight .quote-author span{
+  font-weight:400;
+  color:var(--muted);
+}
+.album-lower{
+  margin-top:clamp(55px,6vw,80px)!important;
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;
+  gap:clamp(52px,8vw,105px)!important;
+  align-items:start;
+}
+.album-listen{padding-top:40px}
+.album-listen .spotify-embed{margin:0;max-width:470px}
+.album-lower .tracks{max-width:100%}
+
+@media(max-width:760px){
+  .hero-cta{margin-top:40px!important}
+  .cover-motif--album{width:105%;top:-10px;right:-69%;opacity:.095;transform:rotate(-7deg)}
+  .cover-motif--album-lower{width:120%;left:-58%;bottom:-120px;opacity:.065}
+  .cover-motif--videos{width:148%;right:-84%;top:-80px;opacity:.12}
+  .cover-motif--videos-lower{width:145%;left:-86%;bottom:-110px;opacity:.1}
+  .cover-motif--about{width:140%;right:-83%;top:7%;opacity:.08}
+  .cover-motif--about-lower{width:120%;bottom:-170px;left:-68%}
+  .cover-motif--interlude{width:120%;left:-32%;bottom:-65%;opacity:.14}
+  .cover-motif--contact{width:150%;top:-9%;right:-84%;opacity:.16}
+  .fresu-spotlight{padding:0 4px;margin:50px auto 0}
+  .fresu-spotlight blockquote{font-size:clamp(29px,7.7vw,37px)}
+  .fresu-spotlight .quote-mark{margin-bottom:18px}
+  .album-lower{grid-template-columns:1fr!important;gap:38px!important;margin-top:48px!important}
+  .album-listen{padding:0}
+  .album-listen .spotify-embed{max-width:none}
+  .album-lower .tracks{margin-top:5px}
+}
