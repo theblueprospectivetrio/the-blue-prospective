@@ -1255,3 +1255,21 @@ a:not(.skip-link){background-image:none}
     background-size: 150% 100%;
   }
 }
+
+/* Only the stairway photograph: restrained dashed perspectives in the outer lower corners.
+   No image, text, height or existing geometry is changed. */
+.interlude-photo::before {
+  display:block !important;
+  content:"" !important;
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background: url("assets/stairs-dashed-details.svg") center center / 100% 100% no-repeat !important;
+  opacity:.66;
+  filter:none !important;
+}
+.interlude-photo::after{display:none !important;content:none !important}
+@media(max-width:760px){
+  .interlude-photo::before{opacity:.5}
+}
