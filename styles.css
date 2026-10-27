@@ -955,3 +955,88 @@ a:not(.skip-link){background-image:none}
 
 /* Home: remove only divider between title and musicians; keep spacing and perspective lines. */
 .hero-musicians { border-top: none !important; }
+
+
+/* Home positioning only: keep all typography sizes, graphics and section heights unchanged. */
+@media(min-width:761px){
+  .hero-content{ transform:translateY(-48px); }
+  /* Shift the photograph's framing up slightly, preserving the hero and image sizes. */
+  .hero-media img{ object-position:center calc(50% + 28px); }
+}
+@media(max-width:760px){
+  .hero-content{ transform:translateY(-22px); }
+}
+/* The fixed bar has no overlay while the home is on screen. */
+.site-header:not(.is-past-home),
+.site-header.is-scrolled:not(.is-past-home){
+  background:transparent !important;
+  box-shadow:none !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  border-bottom-color:transparent !important;
+}
+/* Remove the small duplicate brand in the home only. */
+.site-header:not(.is-past-home) .wordmark{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.site-header .wordmark{ transition:opacity .22s ease,visibility .22s ease; }
+/* From the album onward, the fixed bar and the small brand return. */
+.site-header.is-past-home{
+  background:rgba(23,55,95,.56) !important;
+  -webkit-backdrop-filter:blur(9px) !important;
+  backdrop-filter:blur(9px) !important;
+  border-bottom-color:rgba(255,255,255,.14) !important;
+}
+.site-header.is-past-home .wordmark{opacity:1;visibility:visible;pointer-events:auto}
+
+
+/* Homepage refinement — movement only: photographic composition and type move up.
+   No changes to type sizes, hero artwork, or other sections. */
+@media (min-width:761px) {
+  .hero-content { transform:translateY(-68px) !important; }
+  .hero-media img { object-position:center calc(50% + 66px) !important; }
+}
+@media (max-width:760px) {
+  .hero-content { transform:translateY(-45px) !important; }
+}
+/* Home: entire navigation set starts at the left, brand is absent, bar has no fill.
+   From #album onward: original right-side navigation and translucent blue header. */
+@media (min-width:761px) {
+  .site-header:not(.is-past-home) .wordmark { display:none !important; }
+  .site-header:not(.is-past-home) .header-inner { justify-content:flex-start; gap:32px; }
+  .site-header:not(.is-past-home) .desktop-nav { margin:0 !important; }
+  .site-header:not(.is-past-home) .header-actions { margin-left:0; }
+  .site-header .desktop-nav,
+  .site-header .header-actions { transition:margin .32s ease; }
+}
+@media (max-width:760px) {
+  .site-header:not(.is-past-home) .wordmark { display:none !important; }
+  .site-header:not(.is-past-home) .header-inner { justify-content:flex-end; }
+}
+
+/* Home final — keep all typographic dimensions and internal gaps; change ONLY
+   the photo crop and the entire text stack position relative to that crop. */
+@media (min-width:761px) {
+  .hero-media img { object-position:center calc(50% - 74px) !important; }
+  .hero-content { transform:translateY(clamp(28px, calc(50vh - 353px), 112px)) !important; }
+}
+@media (max-width:760px) {
+  .hero-media img { object-position:center calc(50% - 34px) !important; }
+  .hero-content { transform:translateY(18px) !important; }
+}
+/* Transparent top navigation; fade into navy after the hero. */
+.site-header,
+.site-header.is-scrolled,
+.site-header.is-past-home {
+  transition:background-color .75s ease, border-color .75s ease,
+    -webkit-backdrop-filter .75s ease, backdrop-filter .75s ease !important;
+}
+.site-header .wordmark {
+  transition:opacity .65s ease,visibility .65s ease !important;
+}
+/* The JS uses FLIP animation to smoothly move menu left -> right without snapping. */
+@media (prefers-reduced-motion:reduce) {
+  .site-header,.site-header .wordmark {transition:none!important}
+}

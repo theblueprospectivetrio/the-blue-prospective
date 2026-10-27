@@ -48,7 +48,29 @@ document.getElementById('year').textContent=String(new Date().getFullYear());
 // Keep navigation visible: transparent over the opening photograph, navy on scroll.
 const siteHeader = document.querySelector('.site-header');
 if (siteHeader) {
-  const syncHeader = () => siteHeader.classList.toggle('is-scrolled', window.scrollY > 28);
+  const syncHeader = () => {
+    siteHeader.classList.toggle('is-scrolled', window.scrollY > 28);
+    const hero = document.querySelector('#home');
+    const boundary = hero ? hero.getBoundingClientRect().bottom : 0;
+    const pastHome = boundary <= siteHeader.offsetHeight;
+    const wasPastHome = siteHeader.classList.contains('is-past-home');
+    if (pastHome !== wasPastHome) {
+      const nav = siteHeader.querySelector('.desktop-nav');
+      const lang = siteHeader.querySelector('.header-actions');
+      const shouldAnimate = window.matchMedia('(min-width:761px) and (prefers-reduced-motion: no-preference)').matches;
+      const elements = shouldAnimate ? [nav,lang].filter(Boolean) : [];
+      const positions = elements.map(el => el.getBoundingClientRect().left);
+      siteHeader.classList.toggle('is-past-home', pastHome);
+      elements.forEach((el,i) => {
+        const dx=positions[i]-el.getBoundingClientRect().left;
+        if(Math.abs(dx)<1)return;
+        el.getAnimations().forEach(animation => { if(animation.id==='nav-motion') animation.cancel(); });
+        const anim=el.animate([{transform:`translateX(${dx}px)`},{transform:'translateX(0)'}],{
+          duration:650,easing:'cubic-bezier(.22,.8,.2,1)'});
+        anim.id='nav-motion';
+      });
+    }
+  };
   syncHeader();
   window.addEventListener('scroll', syncHeader, { passive: true });
   window.addEventListener('pageshow', syncHeader);
