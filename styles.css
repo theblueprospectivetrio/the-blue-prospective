@@ -952,3 +952,6 @@ a:not(.skip-link){background-image:none}
 .hero .perspective-art > g > path:last-child {
   display: none;
 }
+
+/* Home: remove only divider between title and musicians; keep spacing and perspective lines. */
+.hero-musicians { border-top: none !important; }
