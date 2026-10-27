@@ -946,3 +946,9 @@ a:not(.skip-link){background-image:none}
   .album-lower.listening-credits{gap:52px !important}
   .credit-entry{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;font-size:13px}
 }
+
+/* Home: remove ONLY the fan of diagonal projection lines along the lower-right diagonal.
+   Keep the vertical bars and all other architectural/dotted lines unchanged. */
+.hero .perspective-art > g > path:last-child {
+  display: none;
+}
