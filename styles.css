@@ -1040,3 +1040,124 @@ a:not(.skip-link){background-image:none}
 @media (prefers-reduced-motion:reduce) {
   .site-header,.site-header .wordmark {transition:none!important}
 }
+
+
+/* THE BLUE PROSPECTIVE — fine dashed-line rhythm, October 2026.
+   Uses CSS only: no instruments, photographs or full-background illustrations.
+   The opening photographic hero is intentionally untouched. */
+
+/* No graphic overlays across the final stairway portrait. */
+.interlude-photo::before,
+.interlude-photo::after,
+.interlude-photo > .cover-motif {
+  display:none !important;
+  content:none !important;
+}
+
+/* Remove former large-scale graphical overlays elsewhere. */
+.cover-motif,
+.album-section::before,
+.videos-section::before,
+.about-section::before,
+.statement::before,
+.site-footer::before {
+  display:none !important;
+  content:none !important;
+}
+
+/* Restrained pairs of perspective-inspired dashed lines. */
+.section-dashes {
+  position:absolute;
+  width:clamp(210px,32vw,450px);
+  height:54px;
+  pointer-events:none;
+  z-index:0;
+  color:#6483a6;
+  opacity:.32;
+}
+.section-dashes span {
+  position:absolute;
+  left:0;
+  width:100%;
+  height:1px;
+  background:repeating-linear-gradient(to right,
+    currentColor 0, currentColor 2px,
+    transparent 2px, transparent 10px);
+  transform-origin: left center;
+}
+.section-dashes span:first-child {top:15px; transform:rotate(-4deg)}
+.section-dashes span:last-child {top:28px; width:88%; transform:rotate(-9deg); opacity:.67}
+
+/* The two boundaries of each section echo each other like a quiet refrain. */
+.section-dashes--album-enter {top:32px;right:-55px;transform:rotate(1deg)}
+.section-dashes--album-exit  {bottom:18px;right:-84px;transform:rotate(3deg)}
+.section-dashes--videos-enter{top:25px;right:-84px;transform:rotate(3deg)}
+.section-dashes--videos-exit {bottom:18px;left:-80px;transform:rotate(180deg)}
+.section-dashes--about-enter {top:24px;left:-80px;transform:rotate(180deg)}
+.section-dashes--about-exit  {bottom:25px;right:-90px;transform:rotate(2deg)}
+.section-dashes--contact-enter{top:28px;right:-90px;transform:rotate(2deg)}
+.videos-section .section-dashes,
+.contact-section .section-dashes {color:#d5e4f5;opacity:.30}
+
+/* Keep these ornaments small, legible, and out of mobile text columns. */
+@media (max-width:760px) {
+  .section-dashes {width:clamp(170px,58vw,280px);height:40px;opacity:.24}
+  .section-dashes--album-enter{top:17px;right:-76px}
+  .section-dashes--album-exit{bottom:15px;right:-78px}
+  .section-dashes--videos-enter{top:17px;right:-78px}
+  .section-dashes--videos-exit{bottom:15px;left:-95px}
+  .section-dashes--about-enter{top:17px;left:-95px}
+  .section-dashes--about-exit{bottom:17px;right:-85px}
+  .section-dashes--contact-enter{top:16px;right:-85px}
+}
+
+
+
+/* V24: straight, dashed perspective lines across the entire width; no curves. */
+@media (min-width:761px) {
+  /* Raise ONLY the home text stack by an additional 38px, leaving photo, bar and artwork still. */
+  .hero-content {transform:translateY(calc(clamp(28px, calc(50vh - 353px), 112px) - 52px)) !important;}
+}
+@media (max-width:760px) {
+  .hero-content {transform:translateY(-16px) !important;}
+}
+
+/* Full-bleed straight dashed strokes: quiet continuation at section boundaries. */
+.section-dashes {
+  width:100vw !important;
+  max-width:none !important;
+  height:56px !important;
+  left:50% !important;
+  right:auto !important;
+  transform:translateX(-50%) !important;
+  opacity:.25 !important;
+}
+.section-dashes span {
+  width:100% !important;
+  height:1px !important;
+  transform:none !important;
+  background:repeating-linear-gradient(90deg,currentColor 0 3px,transparent 3px 11px) !important;
+}
+.section-dashes span:first-child {top:15px !important;}
+.section-dashes span:last-child {top:34px !important;opacity:.62 !important;}
+.section-dashes--album-enter,.section-dashes--videos-enter,
+.section-dashes--about-enter,.section-dashes--contact-enter {top:16px !important;bottom:auto !important;}
+.section-dashes--album-exit,.section-dashes--videos-exit,
+.section-dashes--about-exit {bottom:14px !important;top:auto !important;}
+/* No large white-background illustration: just TWO precise full-width parallel strokes. */
+.album-section::after{
+  content:"" !important;
+  display:block !important;
+  position:absolute !important;
+  inset:0 !important;
+  pointer-events:none !important;
+  z-index:0 !important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1524 1784' preserveAspectRatio='none'%3E%3Cg fill='none' stroke='%237892ae' stroke-width='1.4' stroke-dasharray='3 12' opacity='.26'%3E%3Cpath d='M-50 785 L1575 1130'/%3E%3Cpath d='M-50 817 L1575 1162' opacity='.60'/%3E%3C/g%3E%3C/svg%3E") !important;
+  background-repeat:no-repeat !important;
+  background-size:100% 100% !important;
+}
+.album-section>.page-wrap {position:relative;z-index:1;}
+@media(max-width:760px){
+  .section-dashes{height:44px !important;opacity:.20 !important;}
+  .album-section::after{display:none !important;}
+}
