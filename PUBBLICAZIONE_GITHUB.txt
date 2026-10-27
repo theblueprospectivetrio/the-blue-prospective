@@ -1,0 +1,10 @@
+THE BLUE PROSPECTIVE — versione 15, pronta per GitHub Pages
+
+1. Su github.com/new crea un repository PUBLIC, per esempio: the-blue-prospective.
+2. Nel repository scegli Add file > Upload files. Trascina i FILE e la CARTELLA assets contenuti in questo pacchetto (non la cartella esterna).
+3. Premi Commit changes.
+4. Apri Settings > Pages; in Build and deployment seleziona Deploy from a branch, Branch: main, Folder: /(root), poi Save.
+5. Indirizzo previsto: https://TUO-USERNAME.github.io/the-blue-prospective/
+
+Importante: index.html, styles.css e script.js devono trovarsi nella radice del repository; assets deve rimanere una cartella accanto a loro.
+Non caricare direttamente il file .zip su GitHub aspettandoti che sia estratto automaticamente.
