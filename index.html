@@ -13,7 +13,7 @@
 <meta content="light" name="color-scheme"/>
 <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="assets/trio-standing.webp" rel="preload"/>
-<link href="styles.css?v=20261027-tratteggi-dritti-3" rel="stylesheet"/>
+<link href="styles.css?v=20261027-flip-cover-1" rel="stylesheet"/>
 <script defer="" src="script.js"></script>
 <title>The Blue Prospective — Prospettive</title>
 <script type="application/ld+json">
@@ -91,7 +91,12 @@
 <div class="page-wrap">
 <div class="album-feature">
 <div class="album-art-wrap">
-<img alt="Copertina originale dell'album Prospettive di The Blue Prospective, blu con linee bianche prospettiche" class="album-art" data-i18n-alt="coverAlt" height="1123" loading="lazy" src="assets/prospettive-cover.webp" width="1253"/>
+<button class="album-flip" type="button" aria-label="Gira la copertina per vedere il retro di Prospettive" aria-pressed="false" title="Passa il mouse per vedere il retro · Click/tap per girare">
+<span class="album-flip__inner">
+<span class="album-flip__face album-flip__face--front"><img alt="Copertina originale dell'album Prospettive di The Blue Prospective, blu con linee bianche prospettiche" class="album-art" data-i18n-alt="coverAlt" height="1123" loading="lazy" src="assets/prospettive-cover.webp" width="1253"/></span>
+<span class="album-flip__face album-flip__face--back"><img alt="Retro di Prospettive con tracklist e credits" class="album-art" height="1123" loading="lazy" src="assets/prospettive-back.webp" width="1253"/></span>
+</span>
+</button>
 <p class="image-caption" data-i18n="coverCaption">Artwork &amp; design: Jonathan Corda</p>
 </div>
 <div class="album-intro">
@@ -173,5 +178,15 @@
 </section>
 </main>
 <footer class="site-footer"><div class="page-wrap footer-inner"><a class="footer-brand" href="#home">THE BLUE PROSPECTIVE</a><span>© <span id="year">2026</span> THE BLUE PROSPECTIVE</span><span data-i18n="footerNote">Prospettive · Da Vinci Jazz · 2026</span><a class="back-top" data-i18n="backTop" href="#top">TORNA SU</a></div></footer>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const cover = document.querySelector('.album-flip');
+  if (!cover) return;
+  cover.addEventListener('click', function () {
+    const flipped = cover.classList.toggle('is-flipped');
+    cover.setAttribute('aria-pressed', String(flipped));
+  });
+});
+</script>
 </body>
 </html>
