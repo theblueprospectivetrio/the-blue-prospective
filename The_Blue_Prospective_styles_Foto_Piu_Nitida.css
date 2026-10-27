@@ -1,0 +1,896 @@
+:root{--blue:#1e416e;--blue-deep:#17375f;--blue-light:#42658c;--paper:#f5f5f1;--white:#fff;--ink:#1f3855;--muted:#617184;--line:rgba(30,65,110,.21);--max:1230px;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased}body,button{font-size:16px}button,a{-webkit-tap-highlight-color:transparent}button{font-family:inherit}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}figure,blockquote{margin:0}p,h1,h2,h3{margin-top:0}::selection{background:#aebed0;color:var(--blue-deep)}:focus-visible{outline:2px solid #819cce;outline-offset:5px}.page-wrap{width:min(calc(100% - 112px),var(--max));margin-inline:auto}.section-padding{padding-block:118px}.blue-surface{background:var(--blue);color:#f5f5f1}.skip-link{position:absolute;z-index:100;top:-80px;left:20px;background:white;color:var(--blue);padding:10px 16px}.skip-link:focus{top:10px}
+.site-header{height:84px;position:absolute;top:0;left:0;right:0;z-index:20;color:#fff;border-bottom:1px solid rgba(255,255,255,.18)}.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px}.wordmark{display:inline-flex;align-items:center;gap:11px;font-size:12px;line-height:1.2;letter-spacing:.16em;font-weight:600;white-space:nowrap}.wordmark-symbol{font-size:29px;line-height:1;font-weight:200;transform:rotate(-18deg);opacity:.85}.desktop-nav{display:flex;align-items:center;gap:34px;margin-left:auto}.desktop-nav a,.mobile-nav a{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.88;transition:opacity .2s}.desktop-nav a:hover,.mobile-nav a:hover{opacity:1}.header-actions{display:flex;align-items:center;gap:21px}.language-switch{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.56)}.lang-btn{background:transparent;border:0;color:rgba(255,255,255,.53);font-size:11px;letter-spacing:.13em;cursor:pointer;padding:8px 2px}.lang-btn.is-active{color:#fff;font-weight:700}.mobile-menu-button{display:none;background:transparent;border:0;color:#fff;width:38px;height:38px;cursor:pointer;flex-direction:column;gap:6px;justify-content:center;align-items:center}.mobile-menu-button span{height:1px;width:21px;background:currentColor;display:block;transition:transform .25s}.mobile-menu-button[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.mobile-menu-button[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.mobile-nav{position:absolute;left:0;right:0;top:84px;background:var(--blue-deep);padding:22px 7%;border-bottom:1px solid rgba(255,255,255,.14)}.mobile-nav:not([hidden]){display:flex;flex-direction:column;gap:24px}.mobile-nav[hidden]{display:none}
+.hero{position:relative;isolation:isolate;min-height:765px;height:min(920px,100svh);display:flex;align-items:center;overflow:hidden}.hero-art{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}.perspective-art{position:absolute;width:100%;height:100%;color:rgba(232,239,244,.92);transform:scale(1.04)}.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,65,110,.17),rgba(30,65,110,.55) 35%,rgba(30,65,110,.45) 68%,rgba(30,65,110,.10))}.hero-content{position:relative;padding-top:72px;text-align:center}.eyebrow{font-size:10px;font-weight:600;letter-spacing:.25em;line-height:1.6;text-transform:uppercase}.hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:20px;color:rgba(255,255,255,.9);margin-bottom:38px}.eyebrow-rule{width:36px;height:1px;background:rgba(255,255,255,.76)}.hero h1{font-size:clamp(57px,7.15vw,112px);line-height:1.09;letter-spacing:.14em;font-weight:300;margin:0 auto;max-width:1160px;text-indent:.14em}.hero h1 span{display:block}.hero-subtitle{font-size:clamp(18px,2.3vw,28px);font-weight:300;letter-spacing:.02em;margin:32px 0 12px}.hero-instruments{font-size:12px;letter-spacing:.19em;text-transform:uppercase;color:rgba(255,255,255,.74)}.hero-cta{display:flex;justify-content:center;align-items:center;gap:36px;margin-top:43px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:38px;min-height:53px;padding:15px 23px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}.btn span:last-child{font-size:16px;font-weight:300}.btn-light{color:var(--blue);background:#fff}.btn-light:hover{background:#e3eaf2}.btn-blue{color:#fff;background:var(--blue);margin-top:33px}.btn-blue:hover{background:#123156}.text-link{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;transition:opacity .2s}.text-link:hover{opacity:.7}.hero-text-link{color:#fff}.hero-foot{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;align-items:center;justify-content:space-between;width:min(calc(100% - 112px),var(--max));font-size:10px;letter-spacing:.17em;color:rgba(255,255,255,.78)}.hero-foot a{transition:opacity .2s}.hero-foot a:hover{opacity:.6}
+.photo-break{position:relative;height:clamp(390px,49vw,690px);overflow:hidden;background:#c8d1da}.photo-break img{width:100%;height:100%;object-fit:cover;object-position:center 47%}.photo-break:after{position:absolute;content:"";inset:0;background:linear-gradient(to top,rgba(14,32,53,.34),transparent 37%);pointer-events:none}.photo-break-note{position:absolute;bottom:33px;left:max(56px,calc((100vw - var(--max))/2));display:flex;align-items:center;gap:18px;z-index:1;color:white;font-size:10px;letter-spacing:.23em;font-weight:600}.hairline{width:40px;height:1px;background:rgba(255,255,255,.8)}
+.statement{background:#fff}.statement-layout{display:grid;grid-template-columns:27% 1fr;gap:4%}.section-index{font-size:10px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;margin:0;line-height:1.5}.statement-title{font-size:clamp(36px,4.8vw,65px);font-weight:300;line-height:1.22;letter-spacing:-.032em;max-width:870px;margin-bottom:33px}.statement-copy{max-width:620px;color:#51667d;font-size:17px;line-height:1.85;font-weight:300;margin-bottom:0}
+.album-section{background:var(--paper)}.section-heading{display:flex;justify-content:space-between;align-items:center;padding-bottom:24px;margin-bottom:60px;border-bottom:1px solid var(--line);gap:24px}.heading-right{font-size:10px;letter-spacing:.15em;font-weight:600;text-transform:uppercase}.bullet{padding-inline:8px}.album-feature{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);gap:clamp(55px,8vw,126px);align-items:center}.album-art-wrap{width:100%}.album-art{width:100%;height:auto;box-shadow:0 18px 50px rgba(15,38,68,.10)}.image-caption{margin-top:15px;font-size:10px;letter-spacing:.13em;color:var(--muted)}.dark-eyebrow{color:#5d7290}.album-intro h2{font-weight:300;font-size:clamp(49px,5.3vw,85px);letter-spacing:-.045em;line-height:1.06;margin:18px 0 30px}.title-period{color:#7c9abe}.album-description{max-width:530px;font-size:17px;line-height:1.8;font-weight:300;color:#465e77}.album-metadata{display:flex;flex-wrap:wrap;gap:16px 27px;margin-top:35px;padding-block:24px;border-block:1px solid var(--line)}.album-metadata span{font-size:10px;letter-spacing:.09em;font-weight:600}.album-metadata small{display:block;font-size:9px;letter-spacing:.13em;color:var(--muted);margin-top:6px}.album-lower{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(60px,11vw,160px);margin-top:100px}.liner-quote{position:relative;padding-top:17px}.quote-mark{font-size:90px;font-weight:300;line-height:.5;color:#8fa3bc}.liner-quote blockquote{font-weight:300;max-width:420px;font-size:clamp(24px,3vw,37px);line-height:1.45;letter-spacing:-.02em;margin:12px 0 25px}.quote-author{font-size:10px;letter-spacing:.16em;font-weight:700}.quote-author span{font-weight:400;color:var(--muted)}.spotify-embed{max-width:460px;margin-top:56px}.spotify-embed iframe{display:block;border:0;border-radius:12px;background:#e7e7e2}.tracks h3{font-size:12px;font-weight:700;letter-spacing:.19em;margin:0 0 16px}.track-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.track-list li{display:grid;grid-template-columns:40px 1fr 45px;gap:12px;align-items:baseline;padding:12px 0 11px;border-bottom:1px solid var(--line)}.track-number,.track-list time{font-size:10px;font-weight:500;letter-spacing:.06em;color:#7a8da3}.track-list time{text-align:right}.track-name{font-size:14px;line-height:1.35;font-weight:500}.track-name small{display:block;color:#748498;font-size:10px;font-weight:400;line-height:1.45;margin-top:3px}.album-credits{font-size:10px;letter-spacing:.04em;line-height:1.8;color:#8190a0;margin:66px 0 0;max-width:780px}
+.videos-section{background:var(--blue-deep)}.section-heading-light{border-color:rgba(255,255,255,.26)}.video-title{font-size:clamp(46px,6.8vw,90px);line-height:1.1;letter-spacing:-.035em;font-weight:300;margin:0 0 22px}.video-lead{font-size:16px;color:#d0dce8;font-weight:300;margin-bottom:54px}.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px 25px}.video-frame{position:relative;aspect-ratio:16/9;background:#102b4a;border:1px solid rgba(255,255,255,.12)}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video-meta{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:14px;font-size:10px;letter-spacing:.14em;color:#d2dfeb}.video-meta a{font-size:19px;line-height:1;color:white;transition:transform .2s}.video-meta a:hover{transform:translate(2px,-2px)}
+.about-section{background:#fff}.about-top{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(50px,7vw,115px);align-items:center}.about-main h2{font-size:clamp(44px,5.6vw,78px);line-height:1.13;letter-spacing:-.035em;font-weight:300;margin:18px 0 28px}.about-paragraph{font-size:16px;line-height:1.9;font-weight:300;color:#506781;max-width:520px}.about-photo{margin:0}.about-photo img{width:100%;height:auto}.about-photo figcaption{font-size:9px;letter-spacing:.15em;color:#7e8c9e;margin-top:14px}.members-heading{display:flex;align-items:center;justify-content:space-between;margin-top:95px;padding-bottom:18px;border-bottom:1px solid var(--line)}.members-heading>span{font-size:10px;letter-spacing:.14em;color:#7c8da1}.member-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:38px}.member{padding-top:5px}.member-n{font-size:10px;color:#8095ab;letter-spacing:.12em}.member h3{font-size:26px;letter-spacing:-.025em;font-weight:400;margin:23px 0 5px}.member-instrument{font-size:10px!important;text-transform:uppercase;letter-spacing:.17em!important;font-weight:700!important;color:#7590ae!important;margin-bottom:24px!important}.member p{font-size:14px;color:#4f647a;line-height:1.85;font-weight:300;margin-bottom:0}
+.interlude-photo{height:clamp(350px,46vw,660px);background:#b9c1c3;overflow:hidden}.interlude-photo img{width:100%;height:100%;object-fit:cover;object-position:center 52%}
+.contact-section{position:relative;overflow:hidden;isolation:isolate;padding-block:120px 145px}.contact-lines{position:absolute;z-index:-1;right:-80px;top:11%;width:min(52%,700px);height:90%;color:#dde7f0;opacity:.48}.contact-lines svg{width:100%;height:100%}.contact-content{display:grid;grid-template-columns:27% 1fr}.contact-body{max-width:850px}.contact-body h2{font-size:clamp(60px,8.1vw,116px);line-height:1.1;font-weight:300;letter-spacing:-.045em;margin:14px 0 21px}.contact-body>p:not(.eyebrow){max-width:475px;color:#d7e2ee;font-size:17px;font-weight:300;line-height:1.8}.contact-mail{display:inline-flex;gap:21px;align-items:center;border-bottom:1px solid rgba(255,255,255,.6);padding:10px 0 15px;max-width:100%;font-size:clamp(17px,2.4vw,31px);font-weight:300;letter-spacing:-.02em;overflow-wrap:anywhere}.contact-mail span{font-size:18px}.contact-links{display:flex;gap:35px;margin-top:50px}.contact-links a{font-size:10px;letter-spacing:.18em;font-weight:600}.site-footer{background:#123052;color:#d0dce7}.footer-inner{display:flex;justify-content:space-between;gap:28px;align-items:center;min-height:112px}.footer-inner>*{font-size:9px;letter-spacing:.13em;text-transform:uppercase}.footer-brand{font-size:11px;font-weight:600;color:#fff}.back-top{color:#fff}
+@media(min-width:1550px){.hero h1{font-size:112px}}@media(max-width:1100px){.page-wrap{width:min(calc(100% - 72px),var(--max))}.hero-foot{width:calc(100% - 72px)}.desktop-nav{gap:21px}.album-feature{gap:50px}.album-lower{gap:68px}.member-grid{gap:25px}.photo-break-note{left:36px}}@media(max-width:760px){html{scroll-padding-top:65px}.page-wrap{width:calc(100% - 42px)}.section-padding{padding-block:78px}.site-header{height:70px}.wordmark{font-size:10px;letter-spacing:.1em}.wordmark-symbol{font-size:24px}.desktop-nav{display:none}.mobile-menu-button{display:flex}.mobile-nav{top:70px}.hero{min-height:640px;height:91svh;max-height:820px}.hero-content{padding-top:60px}.hero-eyebrow{font-size:8px;letter-spacing:.13em;gap:10px;margin-bottom:28px}.eyebrow-rule{width:21px}.hero h1{font-size:clamp(40px,8.1vw,64px);letter-spacing:.09em;text-indent:.09em;line-height:1.14}.hero-subtitle{font-size:19px;margin-top:29px}.hero-instruments{font-size:10px;letter-spacing:.12em}.hero-cta{flex-direction:column;gap:26px;margin-top:32px}.hero-foot{width:calc(100% - 42px);bottom:23px;font-size:8px}.photo-break{height:440px}.photo-break img{object-position:55% center}.photo-break-note{left:21px;bottom:24px;font-size:8px}.statement-layout{display:block}.statement-layout>.section-index{margin-bottom:35px}.statement-title{font-size:clamp(34px,7.8vw,57px)}.statement-copy{font-size:15px}.section-heading{margin-bottom:40px}.heading-right{font-size:9px}.album-feature{grid-template-columns:1fr;gap:52px}.album-art-wrap{max-width:600px}.album-intro h2{font-size:clamp(53px,12vw,75px)}.album-description{font-size:16px}.album-lower{grid-template-columns:1fr;gap:67px;margin-top:77px}.liner-quote blockquote{max-width:590px}.spotify-embed{margin-top:37px}.album-credits{margin-top:45px}.video-title{font-size:clamp(43px,10vw,75px)}.video-grid{grid-template-columns:1fr;gap:35px}.video-lead{margin-bottom:38px}.about-top{grid-template-columns:1fr;gap:33px}.about-main h2{font-size:55px}.about-photo{max-width:640px}.members-heading{margin-top:60px}.member-grid{grid-template-columns:1fr;gap:37px}.member{border-bottom:1px solid var(--line);padding-bottom:27px}.member h3{margin-top:14px}.member p{max-width:620px}.interlude-photo{height:410px}.interlude-photo img{object-position:53% center}.contact-section{padding-block:83px 110px}.contact-content{grid-template-columns:1fr}.contact-content>.section-index{margin-bottom:50px}.contact-body h2{font-size:clamp(57px,12vw,95px)}.contact-lines{width:100%;right:-50%;opacity:.26}.footer-inner{flex-wrap:wrap;justify-content:flex-start;gap:14px 22px;padding-block:27px;min-height:110px}.footer-inner>*{width:calc(50% - 12px)}.footer-inner>*:nth-child(2n){text-align:right}}@media(max-width:420px){.hero h1{font-size:clamp(35px,8.5vw,45px)}.hero-eyebrow{font-size:7px}.hero-cta .btn{min-width:220px}.photo-break{height:360px}.video-title{font-size:43px}.contact-mail{font-size:17px}.footer-inner>*{font-size:8px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+/* Prospettive / editorial refinements — the cover's converging lines recur throughout. */
+.wordmark-symbol{width:25px;height:26px;position:relative;display:flex;gap:4px;align-items:center;justify-content:center;transform:none;opacity:.75}
+.wordmark-symbol i{width:1px;background:currentColor;height:19px;display:block;transform:rotate(12deg)}
+.wordmark-symbol i:nth-child(1),.wordmark-symbol i:nth-child(5){height:10px}
+.wordmark-symbol i:nth-child(2),.wordmark-symbol i:nth-child(4){height:16px}
+
+.hero{min-height:880px;height:min(1010px,100svh);max-height:none}
+.hero-content{padding-top:96px}
+.hero-eyebrow{margin-bottom:28px;color:rgba(255,255,255,.8)}
+.hero h1{font-size:clamp(56px,7.1vw,106px);letter-spacing:.14em}
+.hero-musicians{display:flex;align-items:flex-start;justify-content:center;gap:clamp(28px,5vw,86px);margin:30px auto 0;padding-top:21px;border-top:1px solid rgba(255,255,255,.25);max-width:790px}
+.hero-musician{min-width:0;display:flex;flex-direction:column;align-items:center;gap:9px;flex:1}
+.hero-musician-name{font-size:clamp(11px,1.3vw,15px);font-weight:500;letter-spacing:.045em;white-space:nowrap}
+.hero-musician-role{font-size:10px;font-weight:400;letter-spacing:.2em;text-transform:uppercase;color:rgba(235,244,251,.66)}
+.hero-subtitle{font-size:clamp(16px,2.1vw,23px);margin:31px 0 0;letter-spacing:.035em}
+.hero-cta{margin-top:27px;gap:32px}
+.hero-photo{width:clamp(290px,35vw,410px);margin:30px auto 0;border:1px solid rgba(239,244,247,.33);overflow:hidden;position:relative;aspect-ratio:2.45/1;background:var(--blue-deep)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 54%;filter:saturate(.72) contrast(.93);opacity:.92}
+.hero-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 34px rgba(23,55,95,.27);pointer-events:none}
+.hero-foot{bottom:21px}
+.hero-cta .btn{gap:0}
+.hero-cta .text-link{border-bottom:1px solid rgba(255,255,255,.48);padding-bottom:5px}
+.btn{gap:0;letter-spacing:.15em}
+.text-link,.back-top,.contact-links a,.video-meta a,.contact-mail{transition:opacity .2s,border-color .2s}
+.text-link:hover,.back-top:hover,.contact-links a:hover,.video-meta a:hover,.contact-mail:hover{opacity:.64}
+
+/* A consistent line drawing sits behind editorial content, never behind text at full strength. */
+.statement,.album-section,.videos-section,.about-section,.contact-section{position:relative;isolation:isolate;overflow:hidden}
+.statement::before,.album-section::before,.videos-section::before,.about-section::before{content:"";position:absolute;z-index:-1;pointer-events:none;background-image:url("assets/perspective-motif.svg");background-repeat:no-repeat;background-size:contain;background-position:center center}
+.statement::before{width:min(990px,78vw);height:640px;right:-23%;top:-150px;opacity:.075;transform:rotate(5deg)}
+.album-section::before{width:min(1000px,83vw);height:750px;left:-22%;top:140px;opacity:.07;transform:rotate(185deg)}
+.videos-section::before{width:min(1200px,100vw);height:760px;right:-24%;top:8%;opacity:.15;filter:brightness(0) invert(1)}
+.about-section::before{width:min(1050px,86vw);height:800px;right:-24%;bottom:0;opacity:.072;transform:rotate(180deg)}
+.section-index{letter-spacing:.23em;font-weight:600;color:var(--blue-light)}
+.section-heading-light .section-index,.contact-content>.section-index{color:rgba(255,255,255,.81)}
+
+/* Photographs read like brief editorial interludes rather than separate destinations. */
+.photo-break{height:clamp(275px,34vw,485px)}
+.photo-break img{object-position:center 43%;filter:saturate(.7)}
+.photo-break::before,.interlude-photo::before{content:"";position:absolute;z-index:1;inset:0;background-image:url("assets/perspective-motif.svg");background-size:cover;background-position:center;opacity:.085;filter:brightness(0) invert(1);pointer-events:none}
+.photo-break::after{background:linear-gradient(0deg,rgba(24,50,81,.38),rgba(24,50,81,.1) 35%,transparent)}
+.interlude-photo{position:relative;height:clamp(280px,32vw,455px)}
+.interlude-photo img{object-position:center 41%;filter:saturate(.58) contrast(.98)}
+.interlude-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(19,55,95,.18),transparent 65%);pointer-events:none}
+
+/* Let each section flow into the next through rhythm, air and restrained typography. */
+.section-padding{padding-block:96px}
+.statement{padding-block:102px}
+.statement-layout{grid-template-columns:22% 1fr}
+.statement-title{font-size:clamp(36px,4.5vw,61px)}
+.album-section{padding-top:90px}
+.section-heading{margin-bottom:48px;padding-bottom:20px}
+.album-lower{margin-top:78px}
+.about-top{gap:clamp(45px,6vw,90px)}
+.members-heading{margin-top:76px}
+.member-n{display:none}
+.member h3{margin-top:0}
+.video-grid{gap:39px 25px}
+.video-meta{padding-top:13px}
+.video-meta a{font-size:10px;line-height:1.35;letter-spacing:.09em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px}
+.video-meta a:hover{transform:none}
+.contact-mail{border-bottom-color:rgba(255,255,255,.46)}
+.contact-links a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:7px}
+.site-footer{background:#143559}
+
+@media(max-width:1100px){
+ .hero{min-height:855px;height:max(855px,100svh)}
+ .hero-content{padding-top:80px}
+ .hero h1{font-size:clamp(52px,7.3vw,89px)}
+}
+@media(max-width:760px){
+ .hero{height:auto;min-height:max(795px,100svh)}
+ .hero-content{padding-top:110px;padding-bottom:84px}
+ .hero-eyebrow{font-size:8px;margin-bottom:22px}
+ .hero h1{font-size:clamp(39px,8.7vw,61px);letter-spacing:.075em;text-indent:.075em}
+ .hero-musicians{gap:7px;margin-top:28px;padding-top:20px;width:100%}
+ .hero-musician-name{font-size:clamp(10px,2.6vw,13px);letter-spacing:0}
+ .hero-musician-role{font-size:8px;letter-spacing:.08em;white-space:nowrap}
+ .hero-subtitle{font-size:18px;margin-top:25px}
+ .hero-cta{flex-direction:row;gap:23px;flex-wrap:wrap;margin-top:27px}
+ .hero-cta .btn{min-height:45px;padding:13px 14px;font-size:9px}
+ .hero-cta .text-link{font-size:9px}
+ .hero-photo{width:min(100%,390px);margin-top:30px;aspect-ratio:2.25/1}
+ .hero-foot{bottom:21px}
+ .photo-break{height:clamp(255px,58vw,360px)}
+ .photo-break img{object-position:55% 40%}
+ .section-padding{padding-block:76px}
+ .statement{padding-block:75px}
+ .statement-title{font-size:clamp(32px,7.8vw,52px)}
+ .statement-layout>.section-index{margin-bottom:26px}
+ .album-section{padding-top:76px}
+ .album-lower{margin-top:68px}
+ .member h3{margin-top:0}
+ .interlude-photo{height:clamp(230px,53vw,380px)}
+ .interlude-photo img{object-position:center 35%}
+ .statement::before{width:135%;right:-54%;top:10px}
+ .album-section::before{width:130%;left:-65%}
+ .videos-section::before{width:145%;right:-64%;top:12%}
+ .about-section::before{width:130%;right:-60%}
+ .video-meta{align-items:baseline}
+ .video-meta a{font-size:9px}
+}
+@media(max-width:420px){
+ .hero{min-height:765px}
+ .hero-content{padding-top:104px;padding-bottom:75px}
+ .hero h1{font-size:clamp(36px,8.5vw,42px)}
+ .hero-cta{gap:16px}
+ .hero-cta .btn{min-width:0}
+ .hero-photo{margin-top:28px;aspect-ratio:2.15/1}
+ .hero-musician-name{font-size:10px}
+ .hero-musician-role{font-size:7.7px}
+}
+
+/* Keep the photographic transitions compact. */
+@media(min-width:761px){.photo-break{height:clamp(270px,29vw,400px)}.interlude-photo{height:clamp(250px,28vw,385px)}}
+.video-meta{justify-content:flex-end}
+
+/* Version 3 — photographic hero, architectural lines, minimal navigation. */
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero{height:clamp(790px,100svh,1050px);min-height:790px;display:flex;align-items:flex-start;background:var(--blue);}
+.hero-media{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 50%;opacity:.9;filter:saturate(.62) contrast(1.03)}
+.hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,#1e416e 0%,#1e416e 17%,rgba(30,65,110,.98) 29%,rgba(30,65,110,.94) 38%,rgba(30,65,110,.72) 49%,rgba(30,65,110,.27) 64%,rgba(30,65,110,.17) 83%,rgba(30,65,110,.46) 100%)}
+.hero-art{z-index:1}.hero-art:after{background:none}.perspective-art{color:rgba(238,246,250,.93);opacity:.85}
+.hero-content{z-index:2;padding-top:clamp(176px,18.5vh,235px);padding-bottom:0;text-align:center}
+.hero h1{font-size:clamp(58px,7.1vw,110px);line-height:1.08;margin:0 auto;letter-spacing:.145em}
+.hero-musicians{margin-top:34px;padding-top:21px;border-top-color:rgba(255,255,255,.44)}
+.hero-cta{margin-top:38px;gap:38px;align-items:center}
+.hero-foot{z-index:2;bottom:25px;text-shadow:0 1px 12px rgba(0,0,0,.15)}
+.plain-action{display:inline-flex;min-height:0;align-items:center;justify-content:center;background:transparent!important;color:inherit!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;font-size:11px!important;font-weight:500!important;line-height:1.7!important;letter-spacing:.16em!important;text-transform:uppercase;text-decoration:none!important;transition:opacity .2s}
+.plain-action:hover,.plain-action:focus-visible{background:transparent!important;opacity:.65}
+.hero-action{color:white!important}.album-action{color:var(--blue)!important;margin-top:25px}
+.hero-cta .text-link{border:0!important;padding:0!important}
+/* Real content, not labels: no strip index or generic headings before sections. */
+.statement-layout{display:block;max-width:850px}
+.statement-title{max-width:830px}
+.videos-section .section-heading{border:0;margin:0 0 33px;padding:0;justify-content:flex-end}
+.video-grid{row-gap:48px}
+.video-meta a{border:0!important;padding:0!important;letter-spacing:.14em;font-size:10px!important;transform:none!important}
+.album-feature{align-items:center}
+.album-feature+.album-lower{margin-top:83px}
+.about-top{align-items:center}
+.contact-content{display:block}.contact-body{max-width:780px}
+.contact-body>.eyebrow{margin:0 0 25px;color:rgba(255,255,255,.68)}
+.contact-body>p:not(.eyebrow){margin:0 0 25px}
+.contact-mail{display:inline-block;border:0!important;padding:0!important;margin:6px 0 0}
+.contact-links{margin-top:41px;gap:36px}
+.contact-links a{border:0!important;padding:0!important}
+/* No underlined or boxed links anywhere, while preserving keyboard focus. */
+a,a:hover,a:focus-visible,a:active{text-decoration:none!important}
+a:not(.skip-link){background-image:none}
+/* Preserve the three faces in the last photograph; avoid a shallow panoramic crop. */
+.interlude-photo{height:clamp(440px,46vw,650px)}
+.interlude-photo img{object-position:center 27%;filter:saturate(.62) contrast(.98)}
+.interlude-photo::after{background:linear-gradient(0deg,rgba(19,55,95,.15),transparent 65%)}
+@media(max-width:1100px){
+ .hero{height:clamp(760px,100svh,1000px);min-height:760px}
+ .hero-content{padding-top:clamp(170px,18vh,215px)}
+}
+@media(max-width:760px){
+ .hero{height:clamp(770px,100svh,1030px);min-height:770px}
+ .hero-media img{object-position:50% 54%}
+ .hero-media::after{background:linear-gradient(to bottom,#1e416e 0%,#1e416e 15%,rgba(30,65,110,.99) 26%,rgba(30,65,110,.94) 36%,rgba(30,65,110,.72) 47%,rgba(30,65,110,.33) 62%,rgba(30,65,110,.18) 83%,rgba(30,65,110,.57) 100%)}
+ .hero-content{padding-top:clamp(138px,17vh,175px);padding-bottom:0}
+ .hero h1{font-size:clamp(38px,8.4vw,61px);letter-spacing:.073em;text-indent:.073em}
+ .hero-musicians{gap:5px;margin-top:29px}
+ .hero-musician-name{font-size:clamp(9.5px,2.6vw,13px)}
+ .hero-musician-role{font-size:8px}
+ .hero-cta{margin-top:34px;gap:27px;flex-direction:row;flex-wrap:wrap}
+ .plain-action{font-size:10px!important}
+ .statement-layout{width:100%}
+ .statement{padding-block:74px}
+ .interlude-photo{height:clamp(370px,75vw,530px)}
+ .interlude-photo img{object-position:center 26%}
+ .videos-section .section-heading{margin-bottom:23px}
+ .contact-section{padding-block:85px 110px}
+}
+@media(max-width:420px){
+ .hero{min-height:775px}
+ .hero-content{padding-top:145px}
+ .hero h1{font-size:clamp(34px,8.65vw,40px)}
+ .hero-musician-name{font-size:9.7px}
+ .hero-musician-role{font-size:7.5px}
+ .hero-cta{gap:25px}
+ .plain-action{font-size:9px!important}
+ .interlude-photo{height:370px}
+}
+/* Put the full-width photo below the title, as part of the hero background. */
+.hero-media img{top:auto;bottom:0;height:58%;object-fit:cover;object-position:center top}
+.hero-media::after{background:linear-gradient(to bottom,#1e416e 0%,#1e416e 37%,rgba(30,65,110,.93) 46%,rgba(30,65,110,.55) 58%,rgba(30,65,110,.14) 70%,rgba(30,65,110,.10) 84%,rgba(30,65,110,.52) 100%)}
+@media(max-width:760px){.hero-media img{height:61%;object-position:center top}.hero-media::after{background:linear-gradient(to bottom,#1e416e 0%,#1e416e 34%,rgba(30,65,110,.97) 42%,rgba(30,65,110,.62) 52%,rgba(30,65,110,.17) 66%,rgba(30,65,110,.11) 82%,rgba(30,65,110,.59) 100%)}}
+
+
+
+/* Version 7 — one complete photographic hero; title and cover-lines begin below the faces. */
+.hero{
+  height:clamp(1080px, 73vw, 1280px);
+  min-height:1080px;
+  max-height:none;
+  display:flex;
+  align-items:flex-start;
+  background:var(--blue);
+}
+.hero-media img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  opacity:1;
+  filter:saturate(.62) contrast(1.02);
+}
+.hero-media::after{
+  background:linear-gradient(to bottom,
+    rgba(30,65,110,.43) 0%,
+    rgba(30,65,110,.26) 30%,
+    rgba(30,65,110,.43) 40%,
+    rgba(30,65,110,.65) 52%,
+    rgba(30,65,110,.54) 69%,
+    rgba(30,65,110,.30) 85%,
+    rgba(30,65,110,.27) 100%);
+}
+/* Preserve the cover-art geometry while keeping the faces fully unobstructed. */
+.hero-art{clip-path:inset(40% 0 0 0)}
+.hero-content{
+  padding-top:clamp(450px, 39vw, 530px);
+  padding-bottom:0;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+.hero h1{
+  font-size:clamp(63px, 6.4vw, 107px);
+  line-height:1.04;
+  letter-spacing:.13em;
+  margin:0 auto;
+  text-shadow:0 2px 22px rgba(8,23,46,.22);
+}
+.hero-musicians{margin-top:29px;padding-top:18px;max-width:820px;width:100%;}
+.hero-cta{margin-top:29px;}
+.hero-foot{bottom:29px;}
+/* The album begins immediately after the photo — no repetition or continuation. */
+.album-section{
+  padding-top:112px;
+  background:var(--paper);
+}
+.album-section::after{content:none!important;display:none!important;}
+@media (max-width:1100px) and (min-width:761px){
+  .hero{height:1080px;min-height:1080px;}
+  .hero-content{padding-top:450px;}
+  .hero h1{font-size:clamp(48px,6.6vw,73px);}
+}
+/* On mobile, keep the three faces and the keyboard bars in frame.
+   The artwork and type sit below the faces rather than crossing them. */
+@media (max-width:760px){
+  .hero{height:1000px;min-height:1000px;max-height:none;}
+  .hero-media img{
+    inset:0;
+    height:100%;
+    width:100%;
+    object-fit:cover;
+    object-position:center center;
+  }
+  .hero-media::after{
+    background:linear-gradient(to bottom,
+      rgba(30,65,110,.50) 0%,rgba(30,65,110,.27) 33%,
+      rgba(30,65,110,.40) 41%,rgba(30,65,110,.75) 53%,
+      rgba(30,65,110,.68) 67%,rgba(30,65,110,.34) 88%,
+      rgba(30,65,110,.32) 100%);
+  }
+  .hero-art{clip-path:inset(39% 0 0 0);}
+  .hero-content{padding-top:480px;padding-bottom:0;}
+  .hero h1{font-size:clamp(35px,8.8vw,59px);line-height:1.1;letter-spacing:.07em;}
+  .hero-musicians{margin-top:23px;padding-top:16px;}
+  .hero-cta{margin-top:23px;}
+  .album-section{padding-top:78px;}
+}
+@media (max-width:420px){
+  .hero{height:920px;min-height:920px;}
+  .hero-content{padding-top:434px;}
+  .hero h1{font-size:clamp(34px,8.4vw,40px);}
+  .hero-musicians{margin-top:18px;}
+}
+/* Responsive photographic framing: at narrow widths, scale the entire landscape
+   frame rather than cutting off the two musicians at its edges. */
+@media(max-width:760px){
+  .hero-media img{
+    top:165px;
+    bottom:auto;
+    left:50%;
+    width:clamp(740px, 152vw, 1120px);
+    max-width:none;
+    height:auto;
+    object-fit:contain;
+    object-position:center center;
+    transform:translateX(-50%);
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 91%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 91%,transparent 100%);
+  }
+  .hero-content{padding-top:435px;}
+  .hero-art{clip-path:inset(41% 0 0 0);}
+  .hero-media::after{background:linear-gradient(to bottom,rgba(30,65,110,.38),rgba(30,65,110,.16) 32%,rgba(30,65,110,.55) 47%,rgba(30,65,110,.60) 64%,rgba(30,65,110,.10) 81%,rgba(30,65,110,.18) 100%);}
+}
+@media(max-width:420px){
+  .hero{height:815px;min-height:815px;}
+  .hero-media img{top:150px;}
+  .hero-content{padding-top:425px;}
+  .hero-musicians{margin-top:17px;padding-top:13px;}
+  .hero-cta{margin-top:19px;}
+}
+
+
+/* Version 8: raise the complete hero composition and reclaim unused sky above the band. */
+@media (min-width:761px){
+  .hero{height:clamp(960px,65vw,1120px);min-height:960px;}
+  .hero-media img{top:-110px;bottom:auto;height:calc(100% + 110px);object-position:center center;}
+  .hero-content{padding-top:clamp(365px,30vw,410px);}
+  .hero-art{clip-path:inset(38% 0 0 0);}
+}
+@media (max-width:760px){
+  .hero{height:790px;min-height:790px;}
+  .hero-media img{top:110px;}
+  .hero-content{padding-top:370px;}
+  .hero-art{clip-path:inset(40% 0 0 0);}
+}
+@media (max-width:420px){
+  .hero{height:680px;min-height:680px;}
+  .hero-media img{top:98px;}
+  .hero-content{padding-top:360px;}
+  .hero-art{clip-path:inset(40% 0 0 0);}
+}
+
+/* Version 9 — a little more breathing room at the foot of the homepage. */
+@media (min-width:761px){
+  .hero-content{padding-top:clamp(305px,26vw,355px);}
+}
+@media (max-width:760px){
+  .hero-content{padding-top:350px;}
+  .hero-cta{margin-top:22px;}
+}
+@media (max-width:420px){
+  .hero-content{padding-top:346px;}
+}
+/* Fixed navigation, clear on the photograph and subtly colored on scroll. */
+.site-header{position:fixed;background:transparent;transition:background .28s ease,box-shadow .28s ease,backdrop-filter .28s ease;}
+.site-header.is-scrolled{background:rgba(23,55,95,.94);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 7px 25px rgba(10,29,55,.15);border-bottom-color:rgba(255,255,255,.14);}
+.hero-cta{justify-content:center;}
+.hero-cta .hero-action{text-align:center;}
+
+/* Version 10 — reclaim the gap above the lettering while retaining the photo framing. */
+@media (min-width:761px){
+  .hero-content{padding-top:clamp(235px,21vw,285px);}
+  .hero-art{transform:translateY(-45px);}
+}
+@media (max-width:760px){
+  .hero-content{padding-top:312px;}
+  .hero-art{transform:translateY(-24px);}
+}
+@media (max-width:420px){
+  .hero-content{padding-top:314px;}
+  .hero-art{transform:translateY(-20px);}
+}
+/* Raise the band photograph with the lettering: preserve clear faces. */
+@media (min-width:761px){
+  .hero-media img{top:-148px;height:calc(100% + 148px);}
+}
+
+
+/* Version 11 — move the hero lettering block slightly downward; photo framing unchanged. */
+@media (min-width:761px){
+  .hero-content{padding-top:clamp(255px,22.5vw,305px);}
+}
+@media (max-width:760px){
+  .hero-content{padding-top:330px;}
+}
+@media (max-width:420px){
+  .hero-content{padding-top:330px;}
+}
+
+/* Version 12 — lower typography only; preserve photo and architectural artwork. */
+@media (min-width:761px){
+  .hero-content{padding-top:clamp(290px,25vw,340px);}
+}
+@media (max-width:760px){
+  .hero-content{padding-top:355px;}
+}
+@media (max-width:420px){
+  .hero-content{padding-top:355px;}
+}
+
+/* Version 13 — show the complete final group photograph at its natural aspect ratio. */
+.interlude-photo{
+  height:auto;
+  min-height:0;
+  aspect-ratio:1700 / 1133;
+  overflow:hidden;
+}
+.interlude-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+@media (max-width:760px){
+  .interlude-photo{height:auto;min-height:0;aspect-ratio:1700 / 1133;}
+  .interlude-photo img{object-fit:contain;object-position:center center;}
+}
+
+/* Version 14 — navigation stays pinned and completely transparent while scrolling. */
+.site-header, .site-header.is-scrolled {
+  position: fixed;
+  background: transparent;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+/* Version 15 — subtle translucent pinned navigation, between versions 13 and 14. */
+.site-header {
+  position: fixed;
+  background: rgba(23, 55, 95, .40);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  box-shadow: none;
+  border-bottom-color: rgba(255,255,255,.14);
+}
+.site-header.is-scrolled {
+  background: rgba(23, 55, 95, .56);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  box-shadow: none;
+  border-bottom-color: rgba(255,255,255,.14);
+}
+
+
+/* Version 16 — CTA clearer and lower, Paolo Fresu quote elevated/centered, vibraphone-style brand mark. */
+.wordmark-symbol{
+  width:28px;
+  height:22px;
+  position:relative;
+  display:inline-flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:3px;
+  transform:none;
+  opacity:.9;
+}
+.wordmark-symbol i{
+  display:block;
+  width:3px;
+  border-radius:999px;
+  background:rgba(255,255,255,.94);
+  transform:none;
+  box-shadow:0 0 0 1px rgba(255,255,255,.05);
+}
+.wordmark-symbol i:nth-child(1){height:9px}
+.wordmark-symbol i:nth-child(2){height:13px}
+.wordmark-symbol i:nth-child(3){height:17px}
+.wordmark-symbol i:nth-child(4){height:13px}
+.wordmark-symbol i:nth-child(5){height:9px}
+.wordmark-symbol::after{
+  content:"";
+  position:absolute;
+  right:-1px;
+  top:1px;
+  width:15px;
+  height:1.5px;
+  background:rgba(255,255,255,.92);
+  border-radius:999px;
+  transform:rotate(-28deg);
+  transform-origin:right center;
+}
+
+.hero-cta{
+  margin-top:48px;
+}
+.hero-action{
+  color:#eef5fb !important;
+  font-weight:600 !important;
+  letter-spacing:.18em !important;
+  padding-bottom:8px !important;
+  border-bottom:1px solid rgba(238,245,251,.72) !important;
+  position:relative;
+}
+.hero-action::after{
+  content:"→";
+  margin-left:10px;
+  font-size:13px;
+  line-height:1;
+  opacity:.92;
+}
+.hero-action:hover,
+.hero-action:focus-visible{
+  opacity:1 !important;
+  color:#ffffff !important;
+  border-bottom-color:#ffffff !important;
+}
+
+.album-lower{
+  margin-top:72px;
+  align-items:start;
+}
+.liner-quote{
+  max-width:560px;
+  margin:0 auto;
+  padding:14px 18px 0 0;
+}
+.liner-quote .quote-mark{
+  display:block;
+  margin-bottom:14px;
+  font-size:112px;
+  color:#8098b6;
+}
+.liner-quote blockquote{
+  max-width:520px;
+  font-size:clamp(28px,3.15vw,43px);
+  line-height:1.38;
+  letter-spacing:-.028em;
+  color:#214062;
+  margin:0 0 28px;
+}
+.liner-quote .quote-author{
+  font-size:11px;
+  letter-spacing:.18em;
+}
+.liner-quote::before{
+  content:"";
+  position:absolute;
+  inset:-20px -26px auto -30px;
+  height:calc(100% - 18px);
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(125,151,184,.12),rgba(125,151,184,.04));
+  border:1px solid rgba(30,65,110,.10);
+  border-radius:22px;
+}
+.spotify-embed{
+  margin-top:44px;
+}
+
+@media (min-width:761px){
+  .album-lower{
+    grid-template-columns:minmax(0,1fr) minmax(520px,1.02fr);
+    gap:clamp(56px,8vw,118px);
+  }
+  .liner-quote{
+    justify-self:center;
+    align-self:start;
+    padding-top:0;
+  }
+}
+
+@media (max-width:760px){
+  .wordmark-symbol{width:24px;height:20px;gap:2px}
+  .wordmark-symbol i{width:2.5px}
+  .wordmark-symbol::after{width:12px;top:2px}
+  .hero-cta{
+    margin-top:38px;
+  }
+  .hero-action{
+    font-size:10px !important;
+    letter-spacing:.15em !important;
+    padding-bottom:7px !important;
+  }
+  .album-lower{
+    margin-top:54px;
+  }
+  .liner-quote{
+    margin:0;
+    max-width:100%;
+    padding-right:0;
+  }
+  .liner-quote::before{
+    inset:-18px -14px auto -14px;
+    height:calc(100% - 14px);
+  }
+  .liner-quote .quote-mark{
+    margin-bottom:6px;
+    font-size:92px;
+  }
+  .liner-quote blockquote{
+    font-size:clamp(30px,7vw,38px);
+    max-width:none;
+  }
+}
+
+
+/* Version 17 — simpler wordmark, CTA without arrow, Fresu quote lifted and centered with no background. */
+.wordmark{gap:0 !important;}
+.wordmark-symbol{display:none !important;}
+
+.hero-cta{
+  margin-top:68px !important;
+}
+.hero-action{
+  color:#dce8f7 !important;
+  border-bottom:1px solid rgba(220,232,247,.82) !important;
+  letter-spacing:.18em !important;
+}
+.hero-action::after{
+  content:none !important;
+  display:none !important;
+}
+.hero-action:hover,
+.hero-action:focus-visible{
+  color:#ffffff !important;
+  border-bottom-color:#ffffff !important;
+}
+
+.album-lower{
+  margin-top:52px !important;
+  align-items:start !important;
+}
+.liner-quote,
+.liner-quote::before{
+  background:none !important;
+  border:none !important;
+  box-shadow:none !important;
+}
+.liner-quote{
+  max-width:640px !important;
+  margin:-18px auto 0 !important;
+  padding:0 !important;
+  justify-self:center !important;
+  align-self:start !important;
+}
+.liner-quote::before{
+  content:none !important;
+}
+.liner-quote .quote-mark{
+  margin:0 0 10px !important;
+  text-align:left;
+}
+.liner-quote blockquote{
+  max-width:640px !important;
+  margin:0 0 24px !important;
+}
+.spotify-embed{
+  margin-top:42px !important;
+}
+
+@media (min-width: 761px){
+  .album-lower{
+    grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr) !important;
+    gap:clamp(40px,6vw,86px) !important;
+  }
+}
+
+@media (max-width: 760px){
+  .wordmark{gap:0 !important;}
+  .hero-cta{
+    margin-top:48px !important;
+  }
+  .liner-quote{
+    margin:0 auto !important;
+  }
+}
+
+
+/* ===========================================================
+   THE BLUE PROSPECTIVE · COVER ARTWORK SYSTEM / 2026-10-27
+   Linework is vector geometry based on the Prospettive cover:
+   white/dark-blue tapering bars and dashed perspective lines.
+   =========================================================== */
+.cover-definitions {position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.cover-motif {
+  position:absolute;
+  display:block;
+  pointer-events:none;
+  height:auto;
+  max-width:none;
+  z-index:0;
+  color:#1e416e;
+  opacity:.09;
+  overflow:visible;
+}
+.album-section::before,
+.videos-section::before,
+.about-section::before,
+.interlude-photo::before{display:none!important}
+.album-section > .page-wrap,
+.videos-section > .page-wrap,
+.about-section > .page-wrap,
+.contact-section > .page-wrap{
+  position:relative;
+  z-index:1;
+}
+.album-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--album {
+  width:min(880px,72vw);
+  right:-21%;
+  top:-115px;
+  transform:rotate(-7deg);
+  opacity:.13;
+}
+.cover-motif--album-lower {
+  width:min(1030px,85vw);
+  bottom:-280px;
+  left:-39%;
+  transform:rotate(178deg);
+  opacity:.072;
+}
+.videos-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--videos {
+  width:min(1130px,90vw);
+  right:-18%;
+  top:-260px;
+  color:#e5f2ff;
+  opacity:.15;
+  transform:rotate(9deg);
+}
+.cover-motif--videos-lower {
+  width:min(1070px,83vw);
+  left:-23%;
+  bottom:-280px;
+  color:#d7e9fb;
+  opacity:.11;
+  transform:rotate(182deg);
+}
+.about-section{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--about {
+  width:min(1080px,87vw);
+  right:-29%;
+  top:110px;
+  opacity:.10;
+  transform:rotate(170deg);
+}
+.cover-motif--about-lower {
+  width:min(760px,70vw);
+  left:-34%;
+  bottom:-280px;
+  opacity:.075;
+  transform:rotate(-9deg);
+}
+.interlude-photo{position:relative;isolation:isolate;overflow:hidden}
+.cover-motif--interlude {
+  width:90%;
+  left:-15%;
+  bottom:-57%;
+  color:#f0f4f8;
+  opacity:.20;
+  z-index:2;
+  transform:rotate(4deg);
+}
+.contact-section{position:relative;isolation:isolate;overflow:hidden}
+.contact-lines{display:none!important}
+.cover-motif--contact {
+  width:min(1100px,100vw);
+  right:-18%;
+  top:-36%;
+  color:#daeaf9;
+  opacity:.25;
+  transform:rotate(5deg);
+}
+.site-footer{position:relative;isolation:isolate;overflow:hidden}
+.site-footer:before{
+  content:"";
+  position:absolute;
+  inset:-80px -20% -65px 47%;
+  background:url("assets/perspective-motif.svg") center/cover no-repeat;
+  opacity:.11;
+  filter:brightness(0) invert(1);
+  pointer-events:none;
+}
+.site-footer > .page-wrap{position:relative;z-index:1}
+
+/* Existing photographic homepage kept as approved. The label remains a link,
+   but without the decorative arrow or a boxed call-to-action. */
+.wordmark{gap:0!important}
+.wordmark-symbol{display:none!important}
+.hero-action::after{display:none!important;content:none!important}
+.hero-cta{margin-top:60px!important}
+.hero-action{
+  color:#f5f9fe!important;
+  border-bottom:1px solid rgba(241,247,255,.88)!important;
+  padding:0 0 7px!important;
+  font-weight:600!important;
+  letter-spacing:.16em!important;
+  transition:color .2s,border-color .2s,opacity .2s;
+}
+.hero-action:hover,.hero-action:focus-visible{
+  color:white!important;
+  border-bottom-color:#fff!important;
+  opacity:1!important;
+}
+
+/* Paolo Fresu — prominent and truly centered, no tint, panels or frames. */
+.fresu-spotlight{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  margin:clamp(42px,5.7vw,76px) auto 0;
+  padding:0 24px;
+  text-align:center;
+  color:var(--ink);
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.fresu-spotlight .quote-mark{
+  display:block;
+  text-align:center;
+  font-size:clamp(66px,7vw,96px);
+  line-height:.8;
+  font-weight:300;
+  color:#8297ae;
+  margin:0 0 23px;
+}
+.fresu-spotlight blockquote{
+  max-width:none;
+  margin:0 auto 25px;
+  font-size:clamp(29px,3.25vw,43px);
+  line-height:1.36;
+  font-weight:300;
+  letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.fresu-spotlight .quote-author{
+  margin:0;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.16em;
+}
+.fresu-spotlight .quote-author span{
+  font-weight:400;
+  color:var(--muted);
+}
+.album-lower{
+  margin-top:clamp(55px,6vw,80px)!important;
+  display:grid;
+  grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)!important;
+  gap:clamp(52px,8vw,105px)!important;
+  align-items:start;
+}
+.album-listen{padding-top:40px}
+.album-listen .spotify-embed{margin:0;max-width:470px}
+.album-lower .tracks{max-width:100%}
+
+@media(max-width:760px){
+  .hero-cta{margin-top:40px!important}
+  .cover-motif--album{width:105%;top:-10px;right:-69%;opacity:.095;transform:rotate(-7deg)}
+  .cover-motif--album-lower{width:120%;left:-58%;bottom:-120px;opacity:.065}
+  .cover-motif--videos{width:148%;right:-84%;top:-80px;opacity:.12}
+  .cover-motif--videos-lower{width:145%;left:-86%;bottom:-110px;opacity:.1}
+  .cover-motif--about{width:140%;right:-83%;top:7%;opacity:.08}
+  .cover-motif--about-lower{width:120%;bottom:-170px;left:-68%}
+  .cover-motif--interlude{width:120%;left:-32%;bottom:-65%;opacity:.14}
+  .cover-motif--contact{width:150%;top:-9%;right:-84%;opacity:.16}
+  .fresu-spotlight{padding:0 4px;margin:50px auto 0}
+  .fresu-spotlight blockquote{font-size:clamp(29px,7.7vw,37px)}
+  .fresu-spotlight .quote-mark{margin-bottom:18px}
+  .album-lower{grid-template-columns:1fr!important;gap:38px!important;margin-top:48px!important}
+  .album-listen{padding:0}
+  .album-listen .spotify-embed{max-width:none}
+  .album-lower .tracks{margin-top:5px}
+}
+
+/* Hero photo refinement — keep framing/type/artwork fixed, let the original photograph read clearly. */
+.hero-media img {
+  opacity: 1;
+  filter: saturate(.88) contrast(1.07) brightness(1.035);
+}
+.hero-media::after {
+  background: linear-gradient(to bottom,
+    rgba(30,65,110,.24) 0%,
+    rgba(30,65,110,.22) 28%,
+    rgba(30,65,110,.29) 43%,
+    rgba(30,65,110,.37) 59%,
+    rgba(30,65,110,.36) 77%,
+    rgba(18,43,77,.50) 100%);
+}
+@media (max-width: 760px) {
+  .hero-media::after {
+    background: linear-gradient(to bottom,
+      rgba(30,65,110,.28) 0%,
+      rgba(30,65,110,.20) 31%,
+      rgba(30,65,110,.32) 49%,
+      rgba(30,65,110,.37) 68%,
+      rgba(18,43,77,.52) 100%);
+  }
+}
