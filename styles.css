@@ -1215,3 +1215,43 @@ a:not(.skip-link){background-image:none}
 @media (prefers-reduced-motion: reduce) {
   .album-flip__inner { transition-duration: .01ms; }
 }
+
+
+/* ==========================================================
+   RESTYLING SFONDI — PROSPETTIVE (studio del digifile 2026)
+   ONLY BACKGROUND IMAGES. No layout, type, foreground art or
+   interaction is changed. Rays are straight dashed 2:9;
+   strings recede by graduated lengths; ample unmarked paper.
+   The same left/right vertical guides bind all sections.
+   ========================================================== */
+.album-section {
+  background-image: url("assets/cover-atmosphere-album.svg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.videos-section {
+  background-image: url("assets/cover-atmosphere-videos.svg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.about-section {
+  background-image: url("assets/cover-atmosphere-about.svg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.contact-section {
+  background-image: url("assets/cover-atmosphere-contact.svg");
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/* On very narrow displays, shorten the visible line fields to
+   keep detailed textures away from paragraph columns. */
+@media (max-width: 760px) {
+  .album-section,.videos-section,.about-section,.contact-section {
+    background-size: 150% 100%;
+  }
+}
