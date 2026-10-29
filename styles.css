@@ -1273,3 +1273,25 @@ a:not(.skip-link){background-image:none}
 @media(max-width:760px){
   .interlude-photo::before{opacity:.5}
 }
+
+/* Lettura opzionale delle liner notes: nessuna modifica all'impaginazione esistente. */
+.fresu-read-more{display:inline-block;margin:20px 0 0;padding:0 0 5px;background:transparent;border:0;border-bottom:1px solid #8298ae;color:#27476b;font:600 10px/1.5 inherit;letter-spacing:.13em;text-transform:uppercase;cursor:pointer}
+.fresu-read-more:hover{color:#102d50;border-bottom-color:#102d50}
+.fresu-dialog{width:min(720px,calc(100vw - 32px));max-height:min(84vh,920px);padding:0;border:1px solid #d1dce5;border-radius:4px;background:#fafaf8;color:#243c58;box-shadow:0 20px 80px #10294355}
+.fresu-dialog::backdrop{background:#0b2541b3;backdrop-filter:blur(3px)}
+.fresu-dialog-inner{position:relative;padding:clamp(28px,5vw,58px);max-height:84vh;overflow-y:auto}
+.fresu-dialog-close{position:absolute;right:18px;top:10px;border:0;background:none;color:#27476b;font:300 34px/1 Arial,sans-serif;cursor:pointer}
+.fresu-dialog-kicker{font-size:11px;letter-spacing:.16em;font-weight:600;margin:0 0 24px}
+.fresu-dialog h2{font-weight:300;font-size:clamp(36px,5vw,56px);margin:0 0 30px;line-height:1.15}
+.fresu-dialog-copy p{font-size:clamp(15px,1.5vw,17px);line-height:1.85;font-weight:300;margin:0 0 17px}
+.fresu-dialog-signature{margin:26px 0 0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.fresu-dialog-translation{color:#78889a;font-size:11px;margin-top:10px}
+html[lang="it"] .fresu-read-more [lang="en"],html[lang="en"] .fresu-read-more [lang="it"],html[lang="it"] .fresu-dialog [lang="en"],html[lang="en"] .fresu-dialog [lang="it"]{display:none}
+
+/* Paolo Fresu: click/hover affordance without altering the quote's geometry. */
+.fresu-spotlight{position:relative;cursor:pointer;}
+.fresu-hover-target{position:absolute;inset:0;z-index:2;display:block;width:100%;height:100%;padding:0;margin:0;border:0;background:transparent;color:transparent;cursor:pointer;}
+.fresu-hover-target:focus-visible{outline:2px solid #829cb9;outline-offset:7px;border-radius:2px;}
+.fresu-spotlight blockquote,.fresu-spotlight .quote-author{transition:color .22s ease;}
+.fresu-spotlight:hover blockquote,.fresu-spotlight:focus-within blockquote{color:#436787;}
+.fresu-spotlight:hover .quote-author,.fresu-spotlight:focus-within .quote-author{color:#6687a7;}
