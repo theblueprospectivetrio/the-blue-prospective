@@ -1416,11 +1416,40 @@ html[lang="it"] .fresu-read-more [lang="en"],html[lang="en"] .fresu-read-more [l
   .hero-media img { top:0 !important; }
 }
 
-/* ONLY MOBILE: eliminate the empty blue tail below the hero photograph.
-   All other rules, including desktop, are untouched. */
+/* MOBILE ONLY — one original photo covers the entire first screen.
+   No duplicated image layers, gradients made of photographs, or desktop changes. */
 @media screen and (max-width:760px) {
-  #home.hero {height:555px !important;min-height:555px !important;max-height:555px !important;}
+  #home.hero { height:100svh !important; min-height:100svh !important; max-height:100svh !important; }
+  #home .hero-media { inset:0 !important; background:none !important; }
+  #home .hero-media img {
+    position:absolute !important; inset:0 !important;
+    top:0 !important; left:0 !important; bottom:0 !important;
+    width:100% !important; height:100% !important; max-width:none !important;
+    object-fit:cover !important; object-position:50% 50% !important;
+    transform:none !important;
+    -webkit-mask-image:none !important; mask-image:none !important;
+  }
+}
+
+/* iPhone refinement — only reposition the home typography.
+   Single full-height photograph, navigation and desktop remain untouched. */
+@media screen and (max-width:760px) {
+  #home .hero-content {
+    padding-top:calc(312px + 4svh) !important;
+    transform:translateY(-8px) !important;
+  }
+  #home .hero-cta { margin-top:clamp(44px,7svh,66px) !important; }
 }
 @media screen and (max-width:380px) {
-  #home.hero {height:550px !important;min-height:550px !important;max-height:550px !important;}
+  #home .hero-content { padding-top:calc(293px + 3svh) !important; }
+  #home .hero-cta { margin-top:clamp(34px,5svh,48px) !important; }
+}
+
+/* Solo smartphone: sposta il blocco tipografico della home 36 px più in basso.
+   Fotografia, menu, sezioni e layout desktop NON modificati. */
+@media screen and (min-width:381px) and (max-width:760px) {
+  #home .hero-content { padding-top:calc(312px + 4svh + 36px) !important; }
+}
+@media screen and (max-width:380px) {
+  #home .hero-content { padding-top:calc(293px + 3svh + 28px) !important; }
 }
