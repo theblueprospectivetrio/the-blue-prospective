@@ -1646,6 +1646,23 @@ if (siteHeader) {
   #home .hero-content { padding-top:calc(293px + 3svh + 28px) !important; }
 }
 </style>
+<style>
+/* iPhone / smartphone: altezza visibile reale di Safari, fotografia unica senza fascia bianca.
+   Solo mobile: il layout desktop resta identico. */
+@media screen and (max-width:760px) {
+  #home.hero {
+    height:100vh !important;
+    min-height:100vh !important;
+    max-height:100vh !important;
+    height:100dvh !important;
+    min-height:100dvh !important;
+    max-height:100dvh !important;
+    overflow:hidden !important;
+  }
+  #home .hero-media { position:absolute !important; inset:0 !important; height:100% !important; }
+  #home .hero-media img { width:100% !important; height:100% !important; object-fit:cover !important; }
+}
+</style>
 </head>
 <body>
 <!-- Prospettive: tratti verticali e linee di fuga ricavati dalla geometria della copertina. -->
