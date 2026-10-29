@@ -1730,6 +1730,26 @@ if (siteHeader) {
   .fresu-dialog .fresu-dialog-copy p {font-size:14.5px;line-height:1.7;margin-bottom:15px}
 }
 </style>
+
+<style id="tbp-press-kit-only">
+/* Press-kit download area: only the contact section is modified. */
+@media screen and (min-width:761px) {
+  #contact .contact-content {display:grid;grid-template-columns:minmax(0,1fr) minmax(225px,310px);gap:clamp(36px,6vw,110px);align-items:end;}
+  #contact .contact-body {min-width:0;}
+}
+#contact .tbp-press-downloads {color:#f2f5f8;min-width:0;padding-bottom:4px;}
+#contact .tbp-press-kicker {margin:0 0 21px;font-size:10px;font-weight:600;letter-spacing:.2em;color:rgba(245,248,251,.62);}
+#contact .tbp-press-download {display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0;border-top:1px solid rgba(245,248,251,.35);color:#f5f7f9;font-size:12px;font-weight:400;letter-spacing:.12em;line-height:1.4;transition:color .2s ease;}
+#contact .tbp-press-download:last-child {border-bottom:1px solid rgba(245,248,251,.35);}
+#contact .tbp-press-download strong {font-weight:600;}
+#contact .tbp-press-download:hover,#contact .tbp-press-download:focus-visible {color:#c2d6eb;}
+#contact .tbp-press-icon {font-size:21px;font-weight:300;line-height:1;}
+@media screen and (max-width:760px) {
+  #contact .contact-content {display:block;}
+  #contact .tbp-press-downloads {margin-top:57px;padding-bottom:0;}
+  #contact .tbp-press-download {padding-block:19px;font-size:11px;}
+}
+</style>
 </head>
 <body>
 <!-- Prospettive: tratti verticali e linee di fuga ricavati dalla geometria della copertina. -->
@@ -1873,6 +1893,11 @@ if (siteHeader) {
 
 <div class="page-wrap contact-content">
 <div class="contact-body"><p class="eyebrow" data-i18n="contactTop">CONCERTI · COLLABORAZIONI · STAMPA</p><h2 class="visually-hidden" id="contact-title">Contatti / Contact</h2><p data-i18n="contactCopy">Per concerti, booking, collaborazioni e richieste stampa, scrivici direttamente.</p><a class="contact-mail" href="mailto:blueprospectivetrio@gmail.com">blueprospectivetrio@gmail.com </a><div class="contact-links"><a href="https://open.spotify.com/intl-it/album/3WpOZ9RsVsxqO8IybZ93Ap?si=EF3d64_RQI6lsvXB2nhD_Q" rel="noopener noreferrer" target="_blank">SPOTIFY</a><a href="https://www.youtube.com/@TheBlueProspective" rel="noopener noreferrer" target="_blank">YOUTUBE</a><a href="https://www.instagram.com/theblueprospective/" rel="noopener noreferrer" target="_blank">INSTAGRAM</a><a href="https://www.facebook.com/profile.php?id=61593417811431" rel="noopener noreferrer" target="_blank">FACEBOOK</a></div></div>
+<aside class="tbp-press-downloads" aria-label="Press kit downloads">
+  <p class="tbp-press-kicker">PRESS KIT · 2026–2027</p>
+  <a class="tbp-press-download" href="press-kit-it.zip" download="The_Blue_Prospective_Press_Kit_IT.zip" aria-label="Scarica il press kit in italiano"><span>PRESS KIT <strong>ITALIANO</strong></span><span class="tbp-press-icon" aria-hidden="true">↓</span></a>
+  <a class="tbp-press-download" href="press-kit-en.zip" download="The_Blue_Prospective_Press_Kit_EN.zip" aria-label="Download the English press kit"><span>PRESS KIT <strong>ENGLISH</strong></span><span class="tbp-press-icon" aria-hidden="true">↓</span></a>
+</aside>
 </div>
 </section>
 </main>
