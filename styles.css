@@ -1295,3 +1295,7 @@ html[lang="it"] .fresu-read-more [lang="en"],html[lang="en"] .fresu-read-more [l
 .fresu-spotlight blockquote,.fresu-spotlight .quote-author{transition:color .22s ease;}
 .fresu-spotlight:hover blockquote,.fresu-spotlight:focus-within blockquote{color:#436787;}
 .fresu-spotlight:hover .quote-author,.fresu-spotlight:focus-within .quote-author{color:#6687a7;}
+
+/* Spotify listening block: shorter gap below Paolo Fresu, no introductory line. */
+.album-lower.listening-credits{margin-top:clamp(42px,5vw,67px) !important;}
+@media(max-width:760px){.album-lower.listening-credits{margin-top:46px !important;}}
