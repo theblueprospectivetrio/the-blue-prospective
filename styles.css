@@ -1299,3 +1299,128 @@ html[lang="it"] .fresu-read-more [lang="en"],html[lang="en"] .fresu-read-more [l
 /* Spotify listening block: shorter gap below Paolo Fresu, no introductory line. */
 .album-lower.listening-credits{margin-top:clamp(42px,5vw,67px) !important;}
 @media(max-width:760px){.album-lower.listening-credits{margin-top:46px !important;}}
+
+
+/* THE BLUE PROSPECTIVE — iPhone only, 2026-10-29.
+   Desktop >=761px intentionally has ZERO changed rules. */
+@media screen and (max-width:760px) {
+  /* Always-visible compact navigation instead of the hidden drawer. */
+  .site-header { height:88px !important; min-height:88px !important; }
+  .site-header .header-inner { width:calc(100% - 30px) !important; height:88px !important; min-height:88px !important; display:grid !important; grid-template-columns:1fr auto !important; grid-template-rows:32px 38px !important; align-content:center !important; align-items:center !important; justify-content:stretch !important; column-gap:8px !important; row-gap:0 !important; }
+  .site-header .wordmark { display:none !important; }
+  .site-header .mobile-menu-button,
+  .site-header .mobile-nav { display:none !important; }
+  .site-header .desktop-nav { display:flex !important; grid-column:1 / 3 !important; grid-row:2 !important; align-items:center !important; justify-content:space-between !important; gap:8px !important; width:100% !important; min-width:0 !important; margin:0 !important; padding:0 !important; transform:none !important; transition:none !important; }
+  .site-header .desktop-nav a { font-size:clamp(8px,2.35vw,11px) !important; line-height:1.3 !important; letter-spacing:.055em !important; white-space:nowrap !important; padding:8px 0 !important; }
+  .site-header .header-actions { grid-column:2 !important; grid-row:1 !important; align-self:center !important; justify-self:end !important; margin:0 !important; gap:0 !important; }
+  .site-header .language-switch { gap:6px !important; font-size:10px !important; }
+  .site-header .lang-btn { font-size:10px !important; }
+  .site-header.is-past-home .wordmark { display:none !important; }
+  html { scroll-padding-top:88px !important; }
+
+  /* Rebalance ONLY the mobile cover/photo and type. No changes to desktop. */
+  .hero { height:710px !important; min-height:710px !important; max-height:none !important; }
+  .hero-media img { top:72px !important; left:50% !important; bottom:auto !important; width:clamp(760px,195vw,960px) !important; height:auto !important; max-width:none !important; object-fit:contain !important; object-position:center !important; transform:translateX(-50%) !important; }
+  .hero-content { padding-top:312px !important; transform:translateY(-8px) !important; }
+  .hero h1 { font-size:clamp(32px,8.0vw,47px) !important; line-height:1.06 !important; }
+  .hero-musicians { margin-top:18px !important; padding-top:13px !important; }
+  .hero-cta { margin-top:18px !important; }
+  .hero-art { clip-path:inset(37% 0 0 0) !important; opacity:.46 !important; }
+  .hero-foot { bottom:14px !important; }
+}
+@media screen and (max-width:380px) {
+  .site-header .desktop-nav a { font-size:8px !important; letter-spacing:0 !important; }
+  .hero { height:660px !important; min-height:660px !important; }
+  .hero-media img { width:780px !important; top:64px !important; }
+  .hero-content { padding-top:293px !important; }
+  .hero h1 { font-size:31px !important; }
+}
+
+/* Mobile-only navigation refinement — desktop rules unchanged. */
+@media screen and (max-width:760px) {
+  .site-header,
+  .site-header.is-past-home {
+    height:52px !important;
+    min-height:52px !important;
+    background:rgba(25,55,91,.73) !important;
+    -webkit-backdrop-filter:blur(9px) !important;
+    backdrop-filter:blur(9px) !important;
+    border-bottom:1px solid rgba(255,255,255,.12) !important;
+  }
+  .site-header .header-inner,
+  .site-header.is-past-home .header-inner {
+    width:calc(100% - 24px) !important;
+    height:52px !important;
+    min-height:52px !important;
+    display:flex !important;
+    flex-flow:row nowrap !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:10px !important;
+    padding:0 !important;
+    transform:none !important;
+  }
+  .site-header .wordmark,
+  .site-header.is-past-home .wordmark,
+  .site-header .mobile-menu-button,
+  .site-header .mobile-nav { display:none !important; }
+  .site-header .desktop-nav,
+  .site-header.is-past-home .desktop-nav {
+    display:flex !important;
+    flex:1 1 auto !important;
+    width:auto !important;
+    min-width:0 !important;
+    height:100% !important;
+    margin:0 !important;
+    padding:0 !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:clamp(3px,1.2vw,8px) !important;
+    transform:none !important;
+    transition:none !important;
+  }
+  .site-header .desktop-nav a {
+    font-size:clamp(8px,2.17vw,10px) !important;
+    letter-spacing:0 !important;
+    font-weight:600 !important;
+    line-height:1.1 !important;
+    padding:13px 0 !important;
+    color:#fff !important;
+    white-space:nowrap !important;
+  }
+  .site-header .header-actions,
+  .site-header.is-past-home .header-actions {
+    display:flex !important;
+    flex:0 0 auto !important;
+    width:auto !important;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+    align-items:center !important;
+    justify-content:flex-end !important;
+    transform:none !important;
+  }
+  .site-header .language-switch {gap:4px !important;white-space:nowrap !important;}
+  .site-header .lang-btn,.site-header .language-switch {font-size:9px !important;line-height:1 !important;}
+  html {scroll-padding-top:52px !important;}
+}
+@media screen and (max-width:360px) {
+  .site-header .header-inner {width:calc(100% - 16px) !important;gap:6px !important;}
+  .site-header .desktop-nav a {font-size:7.5px !important;}
+  .site-header .lang-btn,.site-header .language-switch {font-size:8px !important;}
+}
+
+/* iPhone: la fotografia parte sotto la barra fissa, senza fascia separata.
+   Unicamente mobile; nessuna modifica alle regole desktop. */
+@media screen and (max-width:760px) {
+  .hero-media img { top:0 !important; }
+}
+
+/* ONLY MOBILE: eliminate the empty blue tail below the hero photograph.
+   All other rules, including desktop, are untouched. */
+@media screen and (max-width:760px) {
+  #home.hero {height:555px !important;min-height:555px !important;max-height:555px !important;}
+}
+@media screen and (max-width:380px) {
+  #home.hero {height:550px !important;min-height:550px !important;max-height:550px !important;}
+}
