@@ -1663,6 +1663,37 @@ if (siteHeader) {
   #home .hero-media img { width:100% !important; height:100% !important; object-fit:cover !important; }
 }
 </style>
+<style id="iphone-hero-fullscreen-final-fix">
+/* iPhone / smartphone ONLY: the hero extends beyond Safari's collapsing
+   bottom controls so the album cannot peek into the initial viewport.
+   One original photograph, no blank fill; desktop remains untouched. */
+@media screen and (max-width:760px) {
+  #home.hero {
+    height:calc(100vh + 115px) !important;
+    min-height:calc(100vh + 115px) !important;
+    max-height:none !important;
+    height:calc(100lvh + 115px) !important;
+    min-height:calc(100lvh + 115px) !important;
+    position:relative !important;
+    overflow:hidden !important;
+  }
+  #home .hero-media {
+    position:absolute !important;
+    inset:0 !important;
+    height:100% !important;
+    background:transparent !important;
+  }
+  #home .hero-media img {
+    position:absolute !important;
+    inset:0 !important;
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:50% 50% !important;
+    max-width:none !important;
+  }
+}
+</style>
 </head>
 <body>
 <!-- Prospettive: tratti verticali e linee di fuga ricavati dalla geometria della copertina. -->
